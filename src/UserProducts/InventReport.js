@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './InventoryReport.css';
 import InventNav from '../UserLayout/InventNav';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 export default function InventReport() {
   const [inventoryReport, setInventoryReport] = useState(null);
@@ -21,6 +23,23 @@ export default function InventReport() {
       });
   }, []);
 
+  const handleDownload = () => {
+    const doc = new jsPDF();
+    const tableRows = [];
+    const products = inventoryReport.products;
+    products.forEach(product => {
+      const productData = [product.name, product.stock];
+      tableRows.push(productData);
+    });
+    doc.autoTable({
+      head: [['Product Name', 'In Stock']],
+      body: tableRows,
+    });
+    doc.text(`Total Products: ${inventoryReport.totalProducts}`, 14, doc.autoTable.previous.finalY + 10);
+    doc.text(`Total Stock: ${inventoryReport.totalStock}`, 14, doc.autoTable.previous.finalY + 20);
+    doc.save('inventory_report.pdf');
+  }
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -37,6 +56,7 @@ export default function InventReport() {
     <div className="inventory-report">
         <InventNav/>
       <h2 className="title">Inventory Report</h2>
+      <button onClick={handleDownload}>Download as PDF</button>
       <table>
         <thead>
           <tr>
@@ -66,3 +86,4 @@ export default function InventReport() {
     </div>
   );
 }
+
