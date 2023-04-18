@@ -1,0 +1,43 @@
+.sales-report {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .sales-report h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .sales-report label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .sales-report input[type="date"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .sales-report button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .sales-report button:hover {
+    background-color: #0062cc;
+  }
+  
+  .sales-report p {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  

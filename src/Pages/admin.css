@@ -1,0 +1,130 @@
+/* Style for the admin page */
+
+
+.admin {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+/* Style for the login form */
+.form-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* add this line to center the form */
+}
+
+.form-main h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333333;
+}
+
+.form-main input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f5f5f5;
+}
+
+.form-main button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Style for the text center alignment */
+.text-center {
+  text-align: center;
+}
+
+/* Style for the left column */
+.left-main {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-main h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.left-main p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666666;
+}
+
+/* Style for the login button */
+.btnl {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 10px; /* add margin-right */
+}
+
+.btnl:hover {
+  transform: scale(1.1);
+}
+.text-center {
+  text-align: center;
+}
+
+.left-main {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-main h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.left-main p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666666;
+}
+
+.p-2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+

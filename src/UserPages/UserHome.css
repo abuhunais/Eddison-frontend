@@ -1,0 +1,15 @@
+
+  input[type = 'number'] {
+    width: 80px;
+  }
+
+  .btn {
+    margin-right: 10px;
+
+  }
+
+  .space {
+    width: 4px;
+    height: auto;
+    display: inline-block;
+  }
