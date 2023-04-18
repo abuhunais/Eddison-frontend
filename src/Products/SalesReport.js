@@ -13,25 +13,50 @@ export default function SalesReport() {
   };
 
   return (
-    <div>
-      <h1>Sales Report</h1>
-      <label htmlFor="startDate">Start Date:</label>
-      <input type="date" id="startDate" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+    <div style={{ fontFamily: 'Arial', fontSize: '18px' }}>
+      <h1 style={{ color: 'blue', textDecoration: 'underline' }}>Sales Report</h1>
+      <label htmlFor="startDate" style={{ marginRight: '10px' }}>Start Date:</label>
+      <input 
+        type="date" 
+        id="startDate" 
+        value={startDate} 
+        onChange={(e) => setStartDate(e.target.value)} 
+        style={{ marginBottom: '10px', marginLeft: '5px', borderRadius: '5px' }} 
+      />
       <br />
-      <label htmlFor="endDate">End Date:</label>
-      <input type="date" id="endDate" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+      <label htmlFor="endDate" style={{ marginRight: '10px' }}>End Date:</label>
+      <input 
+        type="date" 
+        id="endDate" 
+        value={endDate} 
+        onChange={(e) => setEndDate(e.target.value)} 
+        style={{ marginBottom: '10px', marginLeft: '5px', borderRadius: '5px' }} 
+      />
       <br />
-      <button onClick={generateSalesReport}>Generate Report</button>
+      <button onClick={generateSalesReport} style={{ backgroundColor: 'green', color: 'white', padding: '10px', borderRadius: '5px' }}>
+        Generate Report
+      </button>
       {salesReport && (
         <div>
-          <p>Total Sales: {salesReport.totalSales}</p>
-          <p>Start Date: {salesReport.startDate}</p>
-          <p>End Date: {salesReport.endDate}</p>
-          <Link className="btn btn-outline-danger mx-2" to="/">Cancel</Link>
+          <p style={{ fontWeight: 'bold', marginTop: '10px' }}>Total Sales: {salesReport.totalSales}</p>
+          <p style={{ marginTop: '5px' }}>Start Date: {salesReport.startDate}</p>
+          <p style={{ marginTop: '5px' }}>End Date: {salesReport.endDate}</p>
+          <Link 
+            to="/" 
+            style={{ 
+              backgroundColor: 'red', 
+              color: 'white', 
+              padding: '10px', 
+              borderRadius: '5px', 
+              marginTop: '10px', 
+              display: 'inline-block', 
+              textDecoration: 'none' 
+            }}
+          >
+            Cancel
+          </Link>
         </div>
-        
       )}
     </div>
   );
 }
-

@@ -10,7 +10,7 @@ export default function InventReport() {
 
   useEffect(() => {
     setLoading(true);
-    axios.get('http://localhost:9888/reports/inventory')
+    axios.get('http://localhost:9876/reports/inventory')
       .then(response => {
         setInventoryReport(response.data);
         setLoading(false);

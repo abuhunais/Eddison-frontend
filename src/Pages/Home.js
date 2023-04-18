@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../layout/Navbar';
+// import './home.css';
 
 
 export default function Home() {
@@ -86,7 +87,7 @@ export default function Home() {
 
                                     <td>
 
-                                        <Link className='btn btn-primary mx-2' to="/view">View</Link>
+                                        {/* <Link className='btn btn-primary mx-2' to="/view">View</Link> */}
                                         <Link className="btn btn-outline-primary mx-2" z
                                             to={`/editproducts/${pro.id}`}
                                         >Edit</Link>
