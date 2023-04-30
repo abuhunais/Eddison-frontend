@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export default function EditProd() {
 
@@ -30,6 +31,20 @@ export default function EditProd() {
     const onSubmit = async (e)=>{
         e.preventDefault();
         await axios.put(`http://localhost:9876/products/${id}`,addprod)
+        Swal.fire({
+
+            position: 'top',
+
+            icon: 'success',
+
+            title: 'Saved Changes!',
+
+            showConfirmButton: false,
+
+            timer: 1000
+
+        })
+
         navigate("/")
 
 

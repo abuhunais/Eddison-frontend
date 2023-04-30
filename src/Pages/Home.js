@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../layout/Navbar';
+import Swal from 'sweetalert2';
 // import './home.css';
 
 
@@ -33,10 +34,98 @@ export default function Home() {
 
 
 
+    // const deleteProduct = async (id) => {
+    //     await axios.delete(`http://localhost:9876/products/${id}`);
+    //     // Reload the product list after deleting a product
+    //     loadProd();
+    // };
+
     const deleteProduct = async (id) => {
-        await axios.delete(`http://localhost:9876/products/${id}`);
-        // Reload the product list after deleting a product
-        loadProd();
+
+
+
+
+        const swalWithBootstrapButtons = Swal.mixin({
+
+            customClass: {
+
+                confirmButton: 'btn btn-success',
+
+                cancelButton: 'btn btn-danger'
+
+            },
+
+            buttonsStyling: true
+
+        })
+
+
+
+
+        swalWithBootstrapButtons.fire({
+
+            title: 'Are you sure?',
+
+            text: "You won't be able to revert this!",
+
+            icon: 'warning',
+
+            showCancelButton: true,
+
+            confirmButtonText: 'Yes, delete it!',
+
+            cancelButtonText: 'No, cancel!',
+
+            reverseButtons: true
+
+        })
+
+
+
+
+            .then(async (result) => {
+
+                if (result.isConfirmed) {
+
+                    await axios.delete(`http://localhost:9876/products/${id}`);
+
+                    swalWithBootstrapButtons.fire(
+
+                        'Deleted!',
+
+                        'Your file has been deleted.',
+
+                        'success'
+
+                    );
+
+                    loadProd();
+
+                } else if (
+
+                    result.dismiss === Swal.DismissReason.cancel
+
+                ) {
+
+                    swalWithBootstrapButtons.fire(
+
+                        'Cancelled',
+
+                        'Your Service is safe :)',
+
+                        'error'
+
+                    );
+
+                    // loadServices(); // load services after deletion
+
+                }
+
+            });
+
+
+
+
     };
 
 

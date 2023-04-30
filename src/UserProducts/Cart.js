@@ -64,6 +64,7 @@ function Cart() {
         const productId = formData.get('productId');
         const quantity = formData.get('quantity');
         addToCart(productId, quantity);
+        
     }
 
     const handlePageChange = (event) => {
@@ -151,15 +152,6 @@ function Cart() {
             .catch(error => console.error(error));
     }
 
-
-
-    const fetchOrderHistory = () => {
-        axios.get(`http://localhost:9876/orders/history/`+userIdmain)
-            .then(response => {
-                setOrderedProducts(response.data);
-            })
-            .catch(error => console.error(error));
-    }
     const handleBulkOrder = () => {
         axios.post("http://localhost:9876/order/cart?cartId=1")
             .then(response => {
@@ -170,6 +162,19 @@ function Cart() {
             })
             .catch(error => console.error(error));
     }
+
+
+
+    const fetchOrderHistory = () => {
+        axios.get(`http://localhost:9876/orders/history/`+userIdmain)
+            .then(response => {
+                setOrderedProducts(response.data);
+            })
+            .catch(error => console.error(error));
+    }
+    
+
+    
     return (
         <div>
             <InventNav />

@@ -26,7 +26,8 @@ import OrderedList from './UserProducts/UserOrderlist';
 import Cart from './UserProducts/Cart';
 import Order from './UserProducts/Order';
 import SalesReport from './Products/SalesReport';
-// import Sidebar from './layout/Sidebar';
+import ReviewForm from './UserProducts/ReviewForm';
+import ReviewList from './UserProducts/ReviewList';
 
 
 
@@ -81,6 +82,8 @@ function App() {
             <Route exact path="/ordered-products" component={<OrderedList />} />
             <Route exact path="/cart/cart" element={<Cart />} />
             <Route exact path="/cart/order" element={< Order />} />
+            <Route exact path="/review/:id" element={< ReviewForm />} />
+            <Route exact path="/reviewlist/:id" element={< ReviewList />} />
 
             {/* <Route path="/products/:id" render={(props) => <AddToCartForm {...props} product={products.find(product => product.id === parseInt(props.match.params.id))} />} /> */}
 
