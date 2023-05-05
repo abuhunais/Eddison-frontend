@@ -30,7 +30,7 @@ import ReviewForm from './UserProducts/ReviewForm';
 import ReviewList from './UserProducts/ReviewList';
 
 
-
+import SocialMedia from './Pages/SocialMedia';
 
 
 
@@ -47,6 +47,7 @@ function App() {
           <Route exact path="/register" element={<Signup />} />
           <Route exact path="/Signin" element={<Signin />} />
           <Route exact path="/Admin" element={<Admin />} />
+          <Route exact path="/Social" element={<SocialMedia />} />
         </Routes>
 
         {/* <Navbar /> */}

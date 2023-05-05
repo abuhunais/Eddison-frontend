@@ -111,7 +111,7 @@ export default function Home() {
 
                         'Cancelled',
 
-                        'Your Service is safe :)',
+                        'Your Product is safe :)',
 
                         'error'
 

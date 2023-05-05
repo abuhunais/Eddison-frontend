@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { AuthFunctions } from "../context/AuthContext";
 import User from "../Service/UserService";
+import SocialMedia from "./SocialMedia";
 // import "../style.css";
 
 export default class Signin extends Component{
@@ -98,14 +99,9 @@ export default class Signin extends Component{
           />
           <button type="submit" className="butr">SIGNIN</button>
           <Link to="/admin">Admin Login Go Here</Link>
+          <SocialMedia />
         </form>
-        <div className="text-center left-main p-2">
-        <h1 className="dog">Welcome Back </h1>
-        <br/>
-          
-
-          {/* <Link to="/register"><button className="btnl">REGISTER</button></Link> */}
-        </div>
+        
       </div>
     );
   }
