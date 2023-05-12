@@ -58,6 +58,9 @@ export default class Signin extends Component{
                             console.log(result.data)
                             AuthFunctions.setId(res.data.userId);
                             localStorage.setItem('userId', res.data.userId);
+                            localStorage.setItem('userName', user.username);
+                            
+                            
                             window.location.href = "/UserHome";
 
                         }else{

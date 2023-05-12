@@ -31,6 +31,10 @@ import ReviewList from './UserProducts/ReviewList';
 
 
 import SocialMedia from './Pages/SocialMedia';
+import ContactUsForm from './UserProducts/ContactUsForm';
+import ContactUs from './Products/ContactUs';
+import ReplyToUser from './UserProducts/ReplyToUser';
+import ReplyToUserfromAdmin from './UserProducts/ReplyToUserfromAdmin';
 
 
 
@@ -61,6 +65,10 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/addproduct" element={<AddProd />} />
+            <Route exact path="/contactus" element={<ContactUsForm />} />
+            <Route exact path="/replyuser" element={<ReplyToUser />} />
+            <Route exact path="/replypage" element={<ReplyToUserfromAdmin />} />
+            <Route exact path="/contactpage" element={<ContactUs />} />
             {/* <Route exact path="/add" element={<AddReview />} /> */}
 
             <Route exact path="/Inventreport" element={<InventReport />} />

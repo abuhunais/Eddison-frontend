@@ -10,7 +10,7 @@ export default function UserNavbar() {
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-primary">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/userhome">
           Eddison
         </Link>
 
@@ -35,8 +35,18 @@ export default function UserNavbar() {
               </Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" to="/contactus">
+                ContactUs
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/Signin">
                 Signout
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/replypage">
+                Message
               </Link>
             </li>
           </ul>

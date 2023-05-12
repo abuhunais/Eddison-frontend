@@ -39,6 +39,17 @@ export default function Navbar() {
                 Generate Report
 
               </Link>
+              
+
+            </li>
+            <li className="nav-item">
+
+              <Link className="nav-link" to="/contactpage">
+
+                Queries
+
+              </Link>
+              
 
             </li>
 
