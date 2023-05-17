@@ -35,6 +35,7 @@ import ContactUsForm from './UserProducts/ContactUsForm';
 import ContactUs from './Products/ContactUs';
 import ReplyToUser from './UserProducts/ReplyToUser';
 import ReplyToUserfromAdmin from './UserProducts/ReplyToUserfromAdmin';
+;
 
 
 
@@ -64,6 +65,7 @@ function App() {
         {/* <Sidebar> */}
           <Routes>
             <Route exact path="/" element={<Home />} />
+            {/* <Route exact path="/newnav" element={<NewNav />} /> */}
             <Route exact path="/addproduct" element={<AddProd />} />
             <Route exact path="/contactus" element={<ContactUsForm />} />
             <Route exact path="/replyuser" element={<ReplyToUser />} />
