@@ -91,10 +91,37 @@ function Cart() {
         </tr>
     ));
 
+    const [totalPrice, setTotalPrice] = useState(0);
+
+    useEffect(() => {
+      let totalPrice = 0;
+      for (const item of cartItems) {
+        totalPrice += item.quantity * item.product.price;
+      }
+      setTotalPrice(totalPrice);
+    }, [cartItems]);
+
 
     const handleCheckout = () => {
         setLoading(true);
-        fetch('http://localhost:9876/cart/checkout?userId='+userIdmain, {
+
+
+        {
+         
+            if(totalPrice === ""){
+            alert("please enter amount");
+            }else{
+              var options = {
+                key: "rzp_test_YkQcxWbf5MBAl7",
+                key_secret:"FDjuRH3cabe3I5lfD2SH4v79",
+                amount: totalPrice *100,
+                currency:"INR",
+                name:"Eddison E-commerce",
+                description:"for testing purpose",
+                callback_url: "http://localhost:3000/ehome",
+                handler: function(response){
+                  // alert(response.razorpay_payment_id);
+                  fetch('http://localhost:9876/cart/checkout?userId='+userIdmain, {
             method: 'POST',
             //   body: JSON.stringify({ 1}),
             headers: {
@@ -113,6 +140,43 @@ function Cart() {
                 setLoading(false);
                 setError(error);
             });
+                },
+                prefill: {
+                  name:"abu",
+                  email:"abu.com",
+                  contact:"9766650629"
+                },
+                notes:{
+                  address:"Razorpay Corporate office"
+                },
+                theme: {
+                  color:"#3399cc"
+                }
+              };
+              var pay = new window.Razorpay(options);
+              pay.open();
+            }}
+
+
+        // fetch('http://localhost:9876/cart/checkout?userId='+userIdmain, {
+        //     method: 'POST',
+        //     //   body: JSON.stringify({ 1}),
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // })
+        //     .then(response => {
+        //         setMessage('checked out successfully!');
+        //         window.location.reload(false);
+        //     })
+        //     .then(data => {
+        //         setLoading(false);
+        //         console.log(data);
+        //     })
+        //     .catch(error => {
+        //         setLoading(false);
+        //         setError(error);
+        //     });
     }
 
 
@@ -156,12 +220,30 @@ function Cart() {
         axios.post("http://localhost:9876/order/cart?cartId=1")
             .then(response => {
                 setMessage('Order placed successfully!');
-                window.location.reload(false);
+                handleCheckout();
+                // window.location.reload(false);
                 fetchOrderHistory();
                 console.log(response);
             })
             .catch(error => console.error(error));
     }
+
+
+    // const handleCheckout = () => {
+    //     setLoading(true);
+        
+        
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -220,6 +302,9 @@ function Cart() {
                         ))}
                     </tbody>
                 </table>
+                <div className="text-center d-inline-block border rounded p-2">
+  Total price: {totalPrice}
+</div>
                 {cartItems.length > 0 && (
                     <div>
                         <label>Page:</label>
